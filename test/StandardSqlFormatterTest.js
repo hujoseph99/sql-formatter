@@ -391,4 +391,8 @@ describe("StandardSqlFormatter", function() {
     it("formats lonely semicolon", function() {
         expect(sqlFormatter.format(";")).toBe(";");
     });
+
+    it("not formats dollar sign plus curly brackets", function() {
+        expect(sqlFormatter.format("${a:b}.c")).toBe("${a:b}.c");
+    });
 });
