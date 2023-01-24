@@ -1,4 +1,4 @@
-import sqlFormatter from "./../src/sqlFormatter";
+import sqlFormatter from "../src/sqlFormatter";
 
 /**
  * Core tests for all SQL formatters
@@ -395,6 +395,7 @@ export default function behavesLikeSqlFormatter(language) {
     it("formats multi-char operators", function() {
         expect(format("foo != bar")).toBe("foo != bar");
         expect(format("foo <> bar")).toBe("foo <> bar");
+        expect(format("foo <=> bar")).toBe("foo <=> bar");
         expect(format("foo == bar")).toBe("foo == bar"); // N1QL
         expect(format("foo || bar")).toBe("foo || bar"); // Oracle, Postgres, N1QL string concat
 
