@@ -395,4 +395,8 @@ describe("StandardSqlFormatter", function() {
     it("not formats dollar sign plus curly brackets", function() {
         expect(sqlFormatter.format("${a:b}.c")).toBe("${a:b}.c");
     });
+
+    it("not formats dollar sign token", function() {
+        expect(sqlFormatter.format("$a.b.c")).toBe("$a.b.c");
+    });
 });
