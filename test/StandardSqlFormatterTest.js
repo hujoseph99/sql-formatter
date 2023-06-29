@@ -399,4 +399,16 @@ describe("StandardSqlFormatter", function() {
     it("not formats dollar sign token", function() {
         expect(sqlFormatter.format("$a.b.c")).toBe("$a.b.c");
     });
+
+    it("formats comments with CLRF correctly", function() {
+        const queryText = 'select \r\nsession_id,\r\n   -- provider_program_id,\r\n   -- publisher_id from conversion_fact';
+        const expectedFormattedQueryText = [
+            'select',
+            '  session_id,',
+            '  -- provider_program_id,',
+            '  -- publisher_id from conversion_fact',
+        ].join('\n');
+        expect(sqlFormatter.format(queryText)).toBe(expectedFormattedQueryText);
+    });
+
 });
