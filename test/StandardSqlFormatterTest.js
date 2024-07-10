@@ -457,12 +457,12 @@ SELECT
         expect(sqlFormatter.format(query)).toBe(expected.trim());
     });
 
-//     it("supports r strings", () => {
-//         const query = `select regexp_extract('foo/id=1/bar.gzip', r'id=(\\d+)', 1) as partition`;
-//         const expected = `
-// select
-//   regexp_extract('foo/id=1/bar.gzip', r'id=(\\d+)', 1) as partition
-// `;
-//         expect(sqlFormatter.format(query)).toBe(expected.trim());
-//     });
+    it("supports r strings", () => {
+        const query = `select regexp_extract('foo/id=1/bar.gzip', r'id=(\\d+)', 1) as partition`;
+        const expected = `
+select
+  regexp_extract('foo/id=1/bar.gzip', r'id=(\\d+)', 1) as partition
+`;
+        expect(sqlFormatter.format(query)).toBe(expected.trim());
+    });
 });

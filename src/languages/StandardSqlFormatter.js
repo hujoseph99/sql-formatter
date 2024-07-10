@@ -100,7 +100,7 @@ export default class StandardSqlFormatter {
                 reservedWords,
                 reservedToplevelWords,
                 reservedNewlineWords,
-                stringTypes: [`""`, "N''", "''", "``", "[]", "{{}}", "${}"],
+                stringTypes: [`""`, "N''", "r''", "''", "``", "[]", "{{}}", "${}"],
                 openParens: ["(", "CASE"],
                 closeParens: [")", "END"],
                 indexedPlaceholderTypes: ["?"],
