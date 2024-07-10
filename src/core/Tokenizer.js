@@ -77,6 +77,7 @@ export default class Tokenizer {
             "N''": "((N'[^N'\\\\]*(?:\\\\.[^N'\\\\]*)*('|$))+)",
             "{{}}": "({{(.*?)}})",
             "${}": "(\\${(.*?)})",
+            "r''": "(r'(.*?)')",
         };
 
         return stringTypes.map(t => patterns[t]).join("|");
